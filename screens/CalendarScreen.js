@@ -1,9 +1,12 @@
-import {format} from 'date-fns';
-import React, {useContext, useMemo, useState} from 'react';
+import React, { useContext } from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import LogContext from '../contexts/LogContext';
 
 function CalendarScreen() {
+  const {text} = useContext(LogContext);
     return (
       <View style={styles.block}>
+        <Text style={styles.text}>text: {text}</Text>
       </View>
     );
   }
@@ -12,6 +15,10 @@ function CalendarScreen() {
     block: {
       flex: 1,
     },
+    text: {
+      padding: 16,
+      fontSize: 24,
+    }
   });
 
 export default CalendarScreen;
